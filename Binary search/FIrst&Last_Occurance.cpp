@@ -1,3 +1,6 @@
+//It tells about the First and last occurance of the key element 
+//For example in the array [1 2 2 2 3 4 5] here first and last occurance of the element 2 is 1 & 3 indexes
+//It work on the principle of Binary Search
 #include<iostream>
 using namespace std;
 int firstOccurance(int array[],int n,int key)

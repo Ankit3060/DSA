@@ -1,3 +1,6 @@
+//It is Total occurance Example means it Calculate the total key value in the array
+//example [1 2 2 3 3 3 3] here total occurance of 3 is 4
+//It work on the principle of Binary Search
 #include<iostream>
 using namespace std;
 int firstOccurance(int array[],int n,int key)
