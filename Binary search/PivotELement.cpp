@@ -1,3 +1,4 @@
+//here we are finding the Pivot Element from the array like A[4 5 6 1 2 3] pivot is 1
 #include<iostream>
 using namespace std;
 
@@ -40,3 +41,5 @@ int main()
     
     return 0;
 }
+
+//Time complexity = O(logn)

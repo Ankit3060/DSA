@@ -1,3 +1,4 @@
+//here we are finding the Peak ELement from the mountain array like A[1 2 5 2 1] peakElement is 5
 #include<iostream>
 using namespace std;
 
@@ -35,3 +36,5 @@ int main()
     cout<<"The peak element is at index "<<answer<<endl;
 
 }
+
+//Time complexity = O(logn)

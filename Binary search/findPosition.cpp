@@ -75,3 +75,5 @@ int main()
     cout<<"It is found at index : "<<findPosition(array,n,key)<<endl;
     return 0;
 }
+
+//Time complexity = O(logn)
