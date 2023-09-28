@@ -1,3 +1,4 @@
+// Here we are finding the given number is even or odd based on number given by user
 #include <iostream>
 using namespace std;
 

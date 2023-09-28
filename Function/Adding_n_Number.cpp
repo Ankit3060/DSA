@@ -1,3 +1,4 @@
+// here we are adding the all the term till n if n=5 then 5+4+3+2+1=15
 #include <iostream>
 using namespace std;
 

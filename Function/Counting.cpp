@@ -1,3 +1,4 @@
+// Here we are counting the number which are given by the user like input = 7 so answer is 1, 2, 3, 4, 5, 6, 7 
 #include <iostream>
 using namespace std;
 

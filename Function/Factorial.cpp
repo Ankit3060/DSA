@@ -1,3 +1,4 @@
+// Here we are finding the factorial of number factorial mean like factorial of 5 is 5*4*3*2*1=120
 #include <iostream>
 using namespace std;
 

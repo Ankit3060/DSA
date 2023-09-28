@@ -1,3 +1,4 @@
+// This is the exaple of function
 #include <iostream>
 using namespace std;
 void printName(int n)

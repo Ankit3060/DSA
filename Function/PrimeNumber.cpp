@@ -1,3 +1,4 @@
+// Here we are checking the how many prime number are there between the given number
 #include <iostream>
 using namespace std;
 
