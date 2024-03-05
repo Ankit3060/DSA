@@ -1,45 +1,39 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int binarySearch(int array[],int n,int key)
-{
-    int start=0;
-    int end=n-1;
-    int mid=(start+end)/2;
-    while(start<=end)
-    {
-        if(array[mid]==key)
-        {
+
+int binarySearchs(vector<int>&arr,int n,int target){
+    // Method 1
+    // This is STL approach
+    // if(binary_search(arr.begin(),arr.end(),target)){
+    //     cout<<"Element found at index :" <<lower_bound(arr.begin(),arr.end(),target)-arr.begin()<<endl;
+    // }
+    // else{
+    //     cout<<"Element not found"<<endl;
+    // }
+    int start = 0;
+    int end = n-1;
+    while(start<=end){
+        int mid = start+(end-start)/2;
+        if(arr[mid]==target){
+            cout<<"Element found at index : "<<mid<<endl;
             return mid;
         }
-        if(key>array[mid])
-        {
-            start=mid+1;
+        else if(arr[mid]>target){
+            end = mid-1;
         }
         else{
-            end=mid-1;
+            start = mid+1;
         }
-        mid=(start+end)/2;
+        mid = start+(end-start)/2;
     }
+    cout<<"Element not found"<<endl;
     return -1;
 }
 
-int main()
-{
-    int n,key;
-    cout<<"Enter the size of the array"<<endl;
-    cin>>n;
-    int array[n];
-    cout<<"Enter the array"<<endl;
-    for(int i=0;i<n;i++)
-    {
-        cin>>array[i];
-    }
-    cout<<"Enter the element you want to search"<<endl;
-    cin>>key;
-    int answer=binarySearch(array,n,key);
-    cout<<"It is found at :"<<answer<<endl;
+int main() {
+    vector<int>arr = {1,2,3,4,5,6,7,8,9,10};
+    int n = arr.size();
+    int target = 8;
+    int ans = binarySearchs(arr,n,target);
     return 0;
-
 }
-
-//Time complexity = O(logn)
