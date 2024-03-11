@@ -1,3 +1,6 @@
+// K diff problem means we have to find the pairs of elements in the array whose difference is equal to k.
+// eg. {3,1,4,1,5} k=2 => (1,3),(4,3),(5,3)
+
 #include <bits/stdc++.h>
 using namespace std;
 
