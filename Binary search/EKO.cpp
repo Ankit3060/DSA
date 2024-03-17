@@ -1,5 +1,6 @@
 // This is a problem from SPOJ. here we have to find the maximum height of the blade such that we can collect the required amount of wood.
 // Eg. trees=[20,15,10,17], m=7 => maxBlade(trees,m)=15
+// https://www.spoj.com/problems/EKO/
 
 #include <iostream>
 #include <vector>
@@ -45,6 +46,7 @@ int main() {
         cin>>height;
         trees.push_back(height);
     }
+    sort(trees.begin(),trees.end(),greater<long long int>());
     cout<<maxBlade(trees,m)<<endl;
     return 0;
 }
