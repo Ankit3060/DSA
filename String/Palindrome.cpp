@@ -24,3 +24,25 @@ int main() {
     isPalindrome(ch);    
     return 0;
 }
+
+// Time complexity O(n)
+// Space complexity O(1)
+
+
+// Leetcode solution
+// bool isPalindrome(int x) {
+//     if (x < 0) {
+//     return false;
+//     }
+//     string numStr = to_string(x);
+//     int i = 0;
+//     int j = numStr.length() - 1;
+//     while(i<j){
+//         if(numStr[i] != numStr[j]){
+//             return false;
+//         }
+//         i++;
+//         j--;
+//     }
+//     return true;
+// }
