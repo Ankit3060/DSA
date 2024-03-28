@@ -37,3 +37,29 @@ int main(){
     cout<<palindromicSubstring(s)<<endl;
     return 0;
 }
+
+// Leet code solution
+// time complexity O(n^2)
+
+// int expandingIndex(string s,int i, int j){
+//     int count=0;
+//     while(i>=0 && j<s.length() && s[i]==s[j]){
+//         count++;
+//         i--;
+//         j++;
+//     }
+//     return count;
+// }
+
+// int countSubstrings(string s) {
+//     int count=0;
+//     for(int i=0;i<s.length();i++){
+//         int oddAns = expandingIndex(s,i,i);
+//         count += oddAns;
+
+//         //Even
+//         int evenAns = expandingIndex(s,i,i+1);
+//         count += evenAns;
+//     }
+//     return count;
+// }
