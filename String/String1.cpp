@@ -27,7 +27,7 @@ int main(){
     string a="Ankit";
     string b ="Ankit";
     if(a.compare(b)==0){
-        cout<<"a nd b is equal"<<endl;
+        cout<<"a and b is equal"<<endl;
     }
     else{
         cout<<"Not equal"<<endl;
