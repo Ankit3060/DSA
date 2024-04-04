@@ -20,9 +20,23 @@ int strStr(string haystack, string needle) {
     return -1;
 }
 
+//This is brute force approach
+int method2(string haystack, string needle){
+    for(int i=0;i<haystack.length();i++){
+        for(int j=0;j<haystack.length();j++){
+            string ans = haystack.substr(i,j-i+1);
+            if(ans==needle){
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
 int main(){
     string haystack, needle;
     cin>>haystack>>needle;
     cout<<strStr(haystack,needle)<<endl;
+    cout<<method2(haystack,needle)<<endl;
     return 0;
 }
