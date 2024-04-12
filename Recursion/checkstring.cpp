@@ -27,8 +27,18 @@ int checkIndex(string& str,int& n,int i, char& key){
     return ans;
 }
 
+void checkInedxAll(string& str, int& n, int i, char& key, vector<int>& ans){
+    if(i>=n)
+    return;
+
+    if(str[i]==key){
+        ans.push_back(i);
+    }
+    return checkInedxAll(str,n,i+1,key,ans);
+}
+
 int main(){
-    string str = "Ankit Kumar";
+    string str = "ankit kumar";
     int n= str.length();
     int i=0;
     char key = 'k';
@@ -36,6 +46,13 @@ int main(){
     cout<<"Answer is : "<<ans<<endl;
 
     int ans2 = checkIndex(str,n,i,key);
-    cout<<"Index of "<<key<<" is : "<<ans2;
+    cout<<"Index of "<<key<<" is : "<<ans2<<endl;
+
+    vector<int> ans3;
+    checkInedxAll(str,n,i,key,ans3);
+    cout<<"Index of "<<key<<" is : ";
+    for(auto i: ans3){
+        cout<<i<<" ";
+    }
     return 0;
 }
