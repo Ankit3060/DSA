@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int BS(vector<int>&arr, int s, int e,int key){
+int BS(vector<int>&arr, int& s, int& e,int& key){
     //Base case
     if(s>e){
         return -1;
@@ -12,15 +12,17 @@ int BS(vector<int>&arr, int s, int e,int key){
     if(arr[mid]==key){
         return mid;
     }
-    // if(arr[mid]>key){
-    //     return BS(arr,s,mid-1,key);
-    // }
-    // else{
-    //     return BS(arr,mid+1,e,key);
-    // }
+    if(arr[mid]>key){
+        e = mid-1;
+        return BS(arr,s,e,key);
+    }
+    else{
+        s = mid+1;
+        return BS(arr,s,e,key);
+    }
 
     //using ternary operator
-    return arr[mid]>key ? BS(arr,s,mid-1,key) : BS(arr,mid+1,e,key);
+    // return arr[mid]>key ? BS(arr,s,mid-1,key) : BS(arr,mid+1,e,key);
 }
 
 int main(){
