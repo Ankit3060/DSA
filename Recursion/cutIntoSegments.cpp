@@ -1,3 +1,6 @@
+//This is the code for finding the maximum number of segments that can be cut from a rod of length n given the lengths of the segments x,y,z
+//eg. Input: n=7, x=5, y=2, z=2 -> Output: 2 (5,2)
+
 #include<bits/stdc++.h>
 using namespace std;
 
