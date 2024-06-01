@@ -10,7 +10,8 @@ int main(){
     }
     for(auto it:mpp){
         if(it.second>n/2){
-            cout<<it.first;
+            cout<<it.first<<endl;
+            cout<<it.second;
         }
     }
     return 0;
