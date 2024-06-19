@@ -34,3 +34,36 @@ int main(){
     cout<<longestPalindromicSubstring(s)<<endl;
     return 0;
 }
+
+
+// Leetcode ans
+// class Solution {
+// public:
+//     int expandingIndex(string s,int i, int j){
+//         while(i>=0 && j<s.length() && s[i]==s[j]){
+//             i--;
+//             j++;
+//         }
+//         return j-i-1;
+//     }
+
+//     string longestPalindrome(string s) {
+//         if (s.empty()) return "";
+//         int start = 0, maxLength = 1;
+
+//         string ans="";
+//         for(int i=0;i<s.length();i++){
+
+//             int oddAns = expandingIndex(s,i,i);
+//             int evenAns = expandingIndex(s,i,i+1);
+
+//             int maxi = max(oddAns,evenAns);
+
+//             if (maxi > maxLength) {
+//                 start = i - (maxi - 1) / 2;
+//                 maxLength = maxi;
+//             }
+//         }
+//         return s.substr(start, maxLength);;
+//     }
+// };
