@@ -7,6 +7,10 @@ void updatePtr(int *p){
     *p=(*p) * (*p);
 }
 
+void until(int &a){
+    a += 1;
+}
+
 int main()
 {
     // int a = 12;
@@ -38,6 +42,9 @@ int main()
     
     int a=10;
     updatePtr(&a);
+    cout<<a<<endl;
+    
+    until(a);
     cout<<a;
     
     
