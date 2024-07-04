@@ -95,3 +95,95 @@ int main(){
 
     return 0;
 }
+
+//All insert at middle,tail,head combo
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    
+    //constructor
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+};
+
+void insertAthead(Node* &head,int data){
+    Node* temp = new Node(data);
+    temp->next = head;
+    head = temp;
+}
+
+void insertAtTail(Node* &tail,int data){
+    Node* temp = new Node(data);
+    tail->next=temp;
+    tail=temp;
+}
+
+void insertAtMiddle(Node* &tail, Node* &head, int position,int data){
+    
+    if(position==1){
+        insertAthead(head,data);
+        return;
+    }
+    
+    Node* temp = head;
+    int cnt=1;
+    while(cnt<position-1){
+        temp=temp->next;
+        cnt++;
+    }
+    
+    if(temp->next==NULL){
+        insertAtTail(tail,data);
+        return;
+    }
+    
+    Node* newNode = new Node(data);
+    
+    newNode->next = temp->next;
+    
+    temp->next = newNode;
+}
+
+void print(Node* &head){
+    Node* temp = head;
+    while(temp != NULL){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+    cout<<endl;
+}
+
+
+int main()
+{
+    Node* ankit = new Node(10);
+    // cout<<ankit->data<<endl;
+    // cout<<ankit->next<<endl;
+    
+    Node* head = ankit;
+    insertAthead(head,15);
+    print(head);
+    
+    Node* tail = ankit;
+    insertAtTail(tail,26);
+    print(head);
+    
+    insertAtMiddle(tail,head,2,99);
+    print(head);
+    
+    insertAtMiddle(tail,head,1,66);
+    print(head);
+    
+    insertAtMiddle(tail,head,6,199);
+    print(head);
+    return 0;
+}
+
+*/
