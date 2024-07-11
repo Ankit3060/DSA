@@ -71,7 +71,7 @@ int main(){
     print(head);
 
     Node* afterRemoving = ramoveDuplicate(head);
-    cout<<"After removinf Duplicate in sorted list : ";
+    cout<<"After removing Duplicate in sorted list : ";
     print(head);
 
     return 0;
