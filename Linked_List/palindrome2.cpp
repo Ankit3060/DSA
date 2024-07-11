@@ -2,9 +2,6 @@
 // S.C = O(1)
 // This is optimize than previous one
 
-// Palindrome in linked list 
-// T.C = O(n)
-// S.C = O(n)
 #include<bits/stdc++.h>
 using namespace std;
 class Node{
