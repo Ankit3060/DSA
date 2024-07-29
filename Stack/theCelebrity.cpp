@@ -73,7 +73,7 @@ int celebrity(vector<vector<int>> &M, int n)
         colCheck = true;
     }
 
-    if (rowCheck && colCheck)
+    if (rowCheck==true && colCheck==true)
     {
         return ans;
     }
@@ -81,6 +81,7 @@ int celebrity(vector<vector<int>> &M, int n)
     {
         return -1;
     }
+    return ans;
 }
 
 int main()
