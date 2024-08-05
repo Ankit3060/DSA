@@ -10,8 +10,8 @@ class Queue{
     public:
     
     // Constructor
-    Queue(int size){
-        size = 10001;
+    Queue(int s){
+        size = s;
         arr = new int[size];
         front = 0;
         rear = 0;
