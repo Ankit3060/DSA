@@ -1,3 +1,8 @@
+// This is a program to find the first non-repeating character in a stream of characters.
+// Time complexity: O(n)
+// Eg: Input: "aabc"
+//     Output: "a#bb"
+
 #include<bits/stdc++.h>
 using namespace std;
 

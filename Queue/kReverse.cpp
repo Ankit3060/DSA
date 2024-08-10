@@ -1,3 +1,8 @@
+// This is a program to reverse the first k elements of a queue.
+// The time complexity of this program is O(n).
+// Eg. Input: Queue: 1 2 3 4 5, k = 3
+//     Output: Reversed Queue: 3 2 1 4 5
+
 #include<bits/stdc++.h>
 using namespace std;
 

@@ -1,3 +1,10 @@
+// This is a program to find the first petrol pump from where a truck 
+// will be able to complete the circle without running out of petrol.
+// The time complexity of this program is O(n).
+// Eg. Input: petrol[] = {4, 6, 7, 4}, distance[] = {6, 5, 3, 5}
+// PD = {(4, 6), (6, 5), (7, 3), (4, 5)}
+//     Output: 2 starting from index 2
+
 #include <bits/stdc++.h>
 using namespace std;
 

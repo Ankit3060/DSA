@@ -1,3 +1,8 @@
+// This is a program to reverse a queue.
+// The time complexity of this program is O(n).
+// Eg. Input: Queue: 1 2 3 4 5
+//     Output: Reversed Queue: 5 4 3 2 1
+
 #include<bits/stdc++.h>
 using namespace std;
 
