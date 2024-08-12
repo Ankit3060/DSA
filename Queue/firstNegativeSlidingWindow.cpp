@@ -11,11 +11,15 @@ vector<int> FirstNegative(int A[], int n, int k){
     deque<int>dq;
     vector<int>ans;
 
+    // Add the first k negative elements in the window
     for(int i=0;i<k;i++){
         if(A[i]<0){
             dq.push_back(i);
         }
     }
+
+
+    // Add the first negative element in ans
     if(dq.size()>0){
         ans.push_back(A[dq.front()]);
     }else{
@@ -23,14 +27,17 @@ vector<int> FirstNegative(int A[], int n, int k){
     }
 
     for(int i=k;i<n;i++){
+        //Remove the element which is out of the window
         if(!dq.empty() && i-dq.front()>=k){
             dq.pop_front();
         }
 
+        //Add the current element in the window
         if(A[i]<0){
             dq.push_back(i);
         }
 
+        //Add the first negative element in the window
         if(dq.size()>0){
             ans.push_back(A[dq.front()]);
         }else{
