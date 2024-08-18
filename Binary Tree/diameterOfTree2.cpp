@@ -1,6 +1,6 @@
 // Finding the diameter of the tree
 // Diameter here mean longest distance between the node
-// T.C = O(N^2)
+// T.C = O(N)
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -77,28 +77,30 @@ void levelOrderTraversal(Node* root){
     }
 }
 
-int heightOfTree(Node* root){
-    if(root==NULL){
-        return 0;
+pair<int,int> diameterFast(Node* root){
+    if(root == NULL){
+        pair<int,int> p = make_pair(0,0);
+        return p;
     }
-    int left = heightOfTree(root->left);
-    int right = heightOfTree(root->right);
 
-    int ans = max(left,right) + 1;
+    pair<int,int> left = diameterFast(root->left);
+    pair<int,int> right = diameterFast(root->right);
+
+    int leftDiameter  = left.first;
+    int rightDiameter  = right.first;
+    int currentDiameter  = left.second+right.second+1;
+
+    pair<int,int> ans;
+    // max diameter
+    ans.first = max(leftDiameter,max(rightDiameter,currentDiameter));
+    // max height
+    ans.second = max(left.second, right.second)+1;
+
     return ans;
 }
 
 int diameter(Node* root){
-    if(root==NULL){
-        return 0;
-    }
-
-    int op1 = diameter(root->left);
-    int op2 = diameter(root->right);
-    int op3 = heightOfTree(root->left) + heightOfTree(root->right) + 1;
-
-    int ans = max(op1,max(op2,op3));
-    return ans;
+    return diameterFast(root).first;
 }
 
 int main(){
@@ -106,9 +108,6 @@ int main(){
     levelOrderBuldTree(root);
     levelOrderTraversal(root);
     // Example input: 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
-
-    int height = heightOfTree(root);
-    cout<<"Height of the tree is : "<<height<<endl;
 
     int treeDiameter = diameter(root);
     cout<<"Diameter of the tree is : "<<treeDiameter<<endl;
