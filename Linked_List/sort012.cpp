@@ -80,7 +80,7 @@ Node* sortList(Node* &head){
 
 }
 
-//Thtough links or pointer => T.C = O(n)
+//Through links or pointer => T.C = O(n)
 Node* sortList2(Node* head){
     Node* zeroHead = new Node(-1);
     Node* zeroTail = zeroHead;
