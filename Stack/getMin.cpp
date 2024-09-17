@@ -1,6 +1,6 @@
 // This code is to find the minimum element from the stack
 // to solve this problem we have to take the two stack
-// push the lement in main stack and in min Stack if element is smaller than the top lement of min stack
+// push the element in main stack and in min Stack if element is smaller than the top element of min stack
 // to get min simply take take the top element of the min stack
 
 #include<bits/stdc++.h>
