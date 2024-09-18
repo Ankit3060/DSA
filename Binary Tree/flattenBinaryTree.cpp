@@ -1,10 +1,10 @@
-// This is Morris Traversal problem with inorder property
+// This is flatten binary tree problem
 //        1
 //       / \ 
 //      3   5
 //     /\   /\
 //    7 11 17 
-// Morris Traversal : 7 3 11 1 17 5 
+// flatten BT : 1 3 7 11 5 17
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,7 +22,7 @@ public:
     }
 };
 
-void levelOrderBuldTree(Node* &root) {
+void levelOrderBuildTree(Node* &root) {
     queue<Node*> q;
     int data;
     cout << "Enter the data : " << endl;
@@ -52,31 +52,31 @@ void levelOrderBuldTree(Node* &root) {
     }
 }
 
-void morrisTraversal(Node* root){
+void flattenBT(Node* root){
     Node* current = root;
     while(current != NULL){
-        if(current->left == NULL){
-            cout<<current->data<<" ";
-            current = current->right;
-        }
-
-        else{
-            Node* precedor = current->left;
-            while(precedor->right != NULL && precedor->right != current){
-                precedor = precedor->right;
+        if(current->left != NULL){
+            Node* pred = current->left;
+            while(pred->right != NULL){
+                pred = pred->right;
             }
-
-            if(precedor->right==NULL){
-                precedor->right = current;
-                current = current->left;
-            }else{
-                precedor->right = NULL;
-                cout<<current->data<<" ";
-                current = current->right;
-            }
+            pred->right = current->right;
+            current->right = current->left;
+            current->left = NULL;
         }
+        current = current->right;
     }
 }
+
+
+void printFlattenedTree(Node* root) {
+    while(root != NULL) {
+        cout << root->data << " ";
+        root = root->right;
+    }
+    cout << endl;
+}
+
 
 
 void levelOrderTraversal(Node* root) {
@@ -108,13 +108,15 @@ void levelOrderTraversal(Node* root) {
 int main() {
     Node* root = NULL;
 
-    levelOrderBuldTree(root);
+    levelOrderBuildTree(root);
 
     cout << "Level Order Traversal of the tree:" << endl;
     levelOrderTraversal(root);
 
-    cout << "Morris Traversal:" << endl;
-    morrisTraversal(root);
+    cout<<"Flatten binary tree is : "<<endl;
+    flattenBT(root);
+    printFlattenedTree(root);
 
+    
     return 0;
 }
