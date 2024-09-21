@@ -1,4 +1,4 @@
-// In this code we will find the predecor and successor of the particular element
+// In this code we will find the Lowest common ancestor of BST
 // 10 8 21 7 27 5 4 3 -1 (it will take input until -1 given)
 //                   10
 //                   / \
@@ -12,7 +12,7 @@
 //           /
 //          3
 // 
-//  In this the pred and succ of 7 is : (5 , 8)
+//  the LCA of 8 and 21 is 10
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -57,34 +57,34 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
-// This is predecor and succesor code
-pair<int,int> predAndSucc(Node* root, int key){
-    Node* temp = root;
-    int pred , succ = -1;
-    
-    while(temp->data != key){
-        if(temp->data > key){
-            succ = temp->data;
-            temp = temp->left;
+// This is recursive approach
+// Node* LCAinBST(Node* root, Node* p, Node* q){
+//     if(root == NULL){
+//         return NULL;
+//     }
+
+//     if(root->data > p->data && root->data > q->data){
+//         return LCAinBST(root->left, p, q);
+//     }
+//     if(root->data < p->data && root->data < q->data){
+//         return LCAinBST(root->right,p, q);
+//     }
+
+//     return root;
+// }
+
+// This is iterative approach
+Node* LCAinBST(Node* root, Node* p, Node* q){
+    while(root != NULL){
+        if(root->data > p->data && root->data > q->data){
+            root = root->left;
+        }
+        else if(root->data < p->data && root->data < q->data){
+            root = root->right;
         }else{
-            pred = temp->data;
-            temp = temp->right;
+            return root;
         }
     }
-
-    Node* leftTree = temp->left;
-    while(leftTree != NULL){
-        pred = leftTree->data;
-        leftTree = leftTree->right;
-    }
-
-    Node* rightTree = temp->right;
-    while(rightTree != NULL){
-        pred = rightTree->data;
-        rightTree = rightTree->left;
-    }
-    
-    return {pred,succ};
 }
 
 
@@ -126,10 +126,16 @@ int main(){
 
     // 10 8 21 7 27 5 4 3 -1 
 
-    pair<int, int> predecAndSucce = predAndSucc(root, 7);
+    Node* p = root->right;
+    Node* q = root->left;
 
-    cout << "The predecessor and successor are: "
-         << predecAndSucce.first << " and " << predecAndSucce.second << endl;
+    Node* lca = LCAinBST(root, p, q);
+
+    if (lca != NULL) {
+        cout << "LCA of " << p->data << " and " << q->data << " is: " << lca->data << endl;
+    } else {
+        cout << "LCA does not exist" << endl;
+    }
 
     return 0;
 }
