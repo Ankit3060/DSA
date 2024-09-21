@@ -1,4 +1,4 @@
-// In this code we will find the Kth smallest element from the tree
+// In this code we will find the Kth largest element from the tree
 // 10 8 21 7 27 5 4 3 -1 (it will take input until -1 given)
 //                   10
 //                   / \
@@ -56,7 +56,6 @@ void levelOrderTraversal(Node* root) {
 }
 
 
-
 void inOrder(Node* root, vector<int> &ans){
     if(root == NULL){
         return;
@@ -70,9 +69,9 @@ void inOrder(Node* root, vector<int> &ans){
 int kth(Node* root, int k){
     vector<int>ans;
     inOrder(root,ans);
-
-    if(k > 0 && k <= ans.size()) {
-        return ans[k - 1];
+    int n = ans.size();
+    if(k > 0 && k <= n) {
+        return ans[n - k ];
     } else {
         return -1;
     }
@@ -118,7 +117,7 @@ int main(){
     // 10 8 21 7 27 5 4 3 -1 
 
     int kans = kth(root,3);
-    cout<<"The kth smallest value is : "<<kans;
+    cout<<"The kth largest value is : "<<kans;
 
     return 0;
 }
