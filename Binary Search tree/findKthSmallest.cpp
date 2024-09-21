@@ -1,4 +1,4 @@
-// In this code we will find the tree is BST or not
+// In this code we will find the Kth smallest element from the tree
 // 10 8 21 7 27 5 4 3 -1 (it will take input until -1 given)
 //                   10
 //                   / \
@@ -56,7 +56,7 @@ void levelOrderTraversal(Node* root) {
 }
 
 
-// Checking the tree is BST or not with inorder function
+
 void inOrder(Node* root, vector<int> &ans){
     if(root == NULL){
         return;
@@ -67,35 +67,15 @@ void inOrder(Node* root, vector<int> &ans){
     inOrder(root->right,ans);
 }
 
-bool isInorder(Node* root){
-    vector<int> ans;
+int kth(Node* root, int k){
+    vector<int>ans;
     inOrder(root,ans);
 
-    for(int i=1;i<ans.size();i++){
-        if(ans[i]<=ans[i-1]){
-            return false;
-        }
+    if(k > 0 && k <= ans.size()) {
+        return ans[k - 1];
+    } else {
+        return -1;
     }
-    return true;
-}
-
-// checking the tree is BST or not through max and min
-bool validateBST(Node* root, int min , int max){
-    if(root == NULL){
-        return true;
-    }
-    if(root->data > min && root->data < max){
-        bool left = validateBST(root->left,min,root->data);
-        bool right = validateBST(root->right,root->data,max);
-        return left&&right;
-    }
-    else{
-        return false;
-    }
-}
-
-bool validBST(Node* root){
-    return validateBST(root,INT_MIN,INT_MAX);
 }
 
 
@@ -137,18 +117,8 @@ int main(){
 
     // 10 8 21 7 27 5 4 3 -1 
 
-    if(validBST(root)){
-        cout<<"Tree is BST "<<endl;
-    }else{
-        cout<<"Tree is not valid BST "<<endl;
-    }
-    
-
-    if(isInorder(root)){
-        cout<<"It is valid tree "<<endl;
-    }else{
-        cout<<"It is not a valid tree "<<endl;
-    }
+    int kans = kth(root,3);
+    cout<<"The kth value is"<<kans;
 
     return 0;
 }
