@@ -1,4 +1,4 @@
-// In this code we will find the two sum in BST
+// In this code we will find the flatten in BST
 // 10 8 21 7 27 5 4 3 -1 (it will take input until -1 given)
 //                   10
 //                   / \
@@ -12,8 +12,9 @@
 //           /
 //          3
 // 
-//  target = 37 
-// ans = 10+27
+//  flatten = 3->4->5->6->7->8->10->21->27->x
+//            |  |  |  |  |  |  |   |   |  
+//            x  x  x  x  x  x  x   x   x
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -68,26 +69,25 @@ void inOrder(Node* root, vector<int> &ans){
     inOrder(root->right,ans);
 }
 
-bool twoSum(Node* root, int target){
+Node* flatten(Node* root){
     vector<int> ans;
-    inOrder(root, ans);
+    inOrder(root,ans);
+    int n = ans.size();
 
-    int l=0;
-    int h= ans.size()-1;
+    Node* newRoot = new Node(ans[0]);
+    Node* curr = newRoot;
 
-    while(l<h){
-        int sum = ans[l]+ans[h];
-        if(sum == target){
-            return true;
-        }
-        else if(sum>target){
-            h--;
-        }
-        else{
-            l++;
-        }
+    for(int i=1;i<n;i++){
+        Node* temp = new Node(ans[i]);
+        curr->left = NULL;
+        curr->right = temp;
+        curr = temp;
     }
-    return false;
+
+    curr->left = NULL;
+    curr->right = NULL;
+
+    return newRoot;
 }
 
 Node* inseretBST(Node* root, int data){
@@ -128,14 +128,12 @@ int main(){
 
     // 10 8 21 7 27 5 4 3 -1
 
-    int target;
-    cout<<"Enter the target sum to find the two sum "<<endl;
-    cin>>target;
-    if(twoSum(root,target)){
-        cout<<"The tree has two sum property of number : "<<target<<endl;
-    }else{
-        cout<<"The number has not the two sum property of number : "<<target<<endl;
-    }
+    Node* flatRoot = flatten(root);
+
+    cout << "Printing the flattened BST (right-skewed):" << endl;
+    levelOrderTraversal(flatRoot);
+
+    
 
     return 0;
 }
