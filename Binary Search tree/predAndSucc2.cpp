@@ -80,7 +80,7 @@ pair<int,int> predAndSucc(Node* root, int key){
 
     Node* rightTree = temp->right;
     while(rightTree != NULL){
-        pred = rightTree->data;
+        succ = rightTree->data;
         rightTree = rightTree->left;
     }
     

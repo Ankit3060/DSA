@@ -59,7 +59,7 @@ void levelOrderTraversal(Node* root) {
     }
 }
 
-// This is two sum problem
+
 void inOrder(Node* root, vector<int> &ans){
     if(root == NULL){
         return;
