@@ -25,6 +25,7 @@ void print(int adjMatrix[V][V]){
         cout<<endl;
     }
 }
+
 int main(){
     int adjMatrix[V][V];
     initAdjMatrix(adjMatrix);
