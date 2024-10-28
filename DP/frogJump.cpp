@@ -1,8 +1,10 @@
 // This is frog jump problem the frog can jump either 1 step or 2 step
-// In this problem we reach the final tep with minimum energy lost
+// In this problem we reach the final step with minimum energy lost
 // energy lost = abs[height[i]-height[i-1]]
 
 // We solved this problem by memoiation DP solution
+// T.C = O(n)
+// S.C = O(n)+O(n)
 
 #include<bits/stdc++.h>
 using namespace std;
