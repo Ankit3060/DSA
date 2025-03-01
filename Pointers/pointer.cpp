@@ -11,6 +11,7 @@ int main(){
 
     // Accessing the address of a using pointer
     cout<< p<<endl;
+    cout<<&a<<endl;  // It is same as above
 
     // Accessing the address of pointer
     cout<< &p<<endl;
