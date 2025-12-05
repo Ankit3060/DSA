@@ -8,10 +8,14 @@ using namespace std;
 string reorganizeString(string s)
 {
     int hash[26] = {0};
+
+    // step1 : hashing the string
     for (int i = 0; i < s.size(); i++)
     {
         hash[s[i] - 'a']++;
     }
+
+    // step2 : finding the max prequency character and how much it is total
     char max_freq_char;
     int max_freq = INT_MIN;
     for (int i = 0; i < 26; i++)
@@ -22,6 +26,8 @@ string reorganizeString(string s)
             max_freq_char = i + 'a';
         }
     }
+
+    // step3 : placing the max frequency character at even place
     int index = 0;
     while (max_freq > 0 && index < s.size())
     {

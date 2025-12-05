@@ -37,7 +37,7 @@ public:
             top--;
         }
         else{
-            cout<<"stack is usnderflow"<<endl;
+            cout<<"stack is underflow"<<endl;
         }
     }
 

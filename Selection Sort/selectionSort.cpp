@@ -3,17 +3,18 @@
 #include<iostream>
 using namespace  std;
 
-void selectionSort(int array[],int n)
+void selectionSort(int arr[],int n)
 {
-    for(int i=0;i<n-1;i++)
-    {
-        for(int j=i+1;j<n;j++)
-        if(array[j]<array[i])
-        {
-            int temp = array[j];
-            array[j] = array[i];
-            array[i] = temp;
+    for(int i=0;i<n;i++){
+        int min_idx = i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[min_idx]){
+                min_idx = j;
+            }
         }
+        int temp = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = temp;
     }
 }
 

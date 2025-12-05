@@ -17,7 +17,7 @@ int minTimeDiff(vector<string>& s){
     sort(minutes.begin(),minutes.end());
     int minDiff = INT_MAX;
     int n=minutes.size();
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n-1;i++){
         int diff = (minutes[i+1])-minutes[i];
         minDiff = min(minDiff,diff);
     }

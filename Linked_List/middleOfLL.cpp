@@ -1,4 +1,4 @@
-// This cod e is for finding the middle of the list
+// This code is for finding the middle of the list
 // T.C = O(n)
 
 #include<bits/stdc++.h>
