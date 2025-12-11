@@ -36,3 +36,17 @@ int main(){
     }
     return 0;
 }
+
+
+// it can also be written in simple way
+
+// int main(){
+//     vector<int> nums = {1,2,3};
+
+//     do{
+//         for(int i=0;i<nums.size();i++){
+//             cout<<nums[i]<<" ";
+//         }
+//         cout<<endl;
+//     }while(next_permutation(nums.begin(),nums.end()));
+// }
