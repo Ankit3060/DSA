@@ -55,6 +55,7 @@ void insertAtMiddle(Node* &tail,Node* &head,int position,int data){
     newNode->next = temp->next;
     temp->next = newNode;
     newNode->prev = temp;
+    newNode->next->prev = newNode;
 }
 
 //Get the length of  the linked list

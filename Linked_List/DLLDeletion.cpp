@@ -107,7 +107,9 @@ void deleteion(Node* &head, int position){
             cnt++;
         }
         previ->next = curr->next;
-        curr->next->prev = previ;
+        if(curr->next != NULL){
+            curr->next->prev = previ;
+        }
         curr->next = NULL;
         curr->prev = NULL;
         delete curr;

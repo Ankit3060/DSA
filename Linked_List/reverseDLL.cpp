@@ -59,6 +59,9 @@ int main(){
 
     insertAtHead(head,11);
     print(head);
+    
+    insertAtHead(head,99);
+    print(head);
 
     reverse(head);
     print(head);
