@@ -15,15 +15,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 void pascalTriangle(int n)
 {
-    long long ans=1;
-    for(int i=1;i<n;i++)
+    for(int row=1;row<=n;row++)
     {
-        ans=ans*(n-i);
-        ans=ans/i;
-        cout<<ans<<" "<<endl;
+        long long ans=1;
+        cout<<ans<<" ";
+
+        for(int col=1;col<row;col++){
+            ans=ans*(row-col);
+            ans=ans/col;
+            cout<<ans<<" ";
+        }
+        cout<<endl;
     }
 }
 
